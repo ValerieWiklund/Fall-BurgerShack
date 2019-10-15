@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using MySql.Data.MySqlClient;
 
 namespace BurgerShack
 {
@@ -40,6 +41,12 @@ namespace BurgerShack
       // this is how you create a service available for dependency injection
       services.AddTransient<BurgersService>();
 
+    }
+
+    private IDbConnection CreateDbConnection()
+    {
+      var connectionString = Configuration.GetSection("db").GetValue<string>("gearhost");
+      return new MySqlConnection(connectionString);
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

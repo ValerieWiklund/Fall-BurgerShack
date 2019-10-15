@@ -1,15 +1,15 @@
 USE burgershackvw;
 
 
--- CREATE TABLE burgers
--- (
---   id VARCHAR(255) NOT NULL,
---   name VARCHAR(255) NOT NULL,
---   price DECIMAL(5, 2) DEFAULT .99,
---   description VARCHAR(255) NOT NULL,
+CREATE TABLE burgershackitems
+(
+  id VARCHAR(255) NOT NULL,
+  name VARCHAR(255) NOT NULL,
+  price DECIMAL(5, 2) DEFAULT .99,
+  description VARCHAR(255) NOT NULL,
 
---   PRIMARY KEY(id)
--- )
+  PRIMARY KEY(id)
+)
 
 -- Create
 
@@ -39,6 +39,6 @@ USE burgershackvw;
 
 -- DELETE
 
-DELETE FROM burgers WHERE id = 235;
-SELECT *
-FROM burgers;
+-- DELETE FROM burgers WHERE id = 235;
+-- SELECT *
+-- FROM burgers;
